@@ -47,5 +47,25 @@ router.post('/login',function(req, res){
 router.get('/saveInfo',function(req,res){
     console.log(req.body)
 })
-
+router.post('/skillSubmit',function(req,res){
+    console.log(req.body)
+    var body = req.body
+    var sql = 'insert into examine() value(?,?,?,?,?,?);'
+    var params=[body.id,body.type,body.skillimg,body.voiceintro,body.textintro,body.ranking]
+    db.query(sql,params,(error)=>{
+        if(error) throw error
+        res.send('提交成功')
+    })
+})
+router.get('/list',function(req,res){
+    var sql = 'select * from examine'
+    db.query(sql,(error,data)=>{
+        if(error) throw errow
+        console.log(data)
+        res.send({
+            status:200,
+            data:data
+        })
+    })
+})
 module.exports = router
