@@ -1,8 +1,8 @@
-var express = require('express')
-var router  = express.Router()
-var https = require('https');
-var db = require('./../mysql/index')
-let login = require('./../controller/login')
+const express = require('express')
+const router  = express.Router()
+const https = require('https');
+// const db = require('./../mysql/index')
+// const login = require('./../controller/login')
 
 
 router.post('/login',function(req, res){
@@ -33,10 +33,10 @@ router.post('/login',function(req, res){
         //数据库存储
         var sqlstr = 'insert into user(openid,session_key) values(?,?) on duplicate key update session_key = ?' //检查更新保存
         var params=[data.openid,data.session_key,data.session_key]
-        db.query(sqlstr,params,function(error,res){
-            if(error) throw error
-            console.log(res)
-        })
+        // db.query(sqlstr,params,function(error,res){
+        //     if(error) throw error
+        //     console.log(res)
+        // })
         res.send({
             openid:data.openid,
             session3rd:data['session_key']

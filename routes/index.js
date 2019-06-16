@@ -1,5 +1,5 @@
 
-let login = require('./login')
+const login = require('./login')
 module.exports = function(app){
-    app.use('/app',login);
+    // app.use('/app',login);
 }
