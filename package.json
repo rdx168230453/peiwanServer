@@ -5,7 +5,7 @@
   "private": true,
   "author": "sae <saemail@sina.cn>",
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "^4.18.2",
     "express-ws": "^4.0.0",
     "mongolass": "^4.4.1",
     "mysql": "^2.16.0",
